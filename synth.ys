@@ -1,0 +1,24 @@
+# Load the Liberty file with area info
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Read your Verilog RTL
+read_verilog ALU.v
+
+# Run synthesis
+synth -top ALU
+
+# Map to standard cells from Liberty
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Generate area/timing report
+stat -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+#Write netlist to alu_synth.v
+write_verilog ALU_synth.v
+
+#Show netlist (.dot file) using Graphviz
+show -format dot -prefix alu_netlist
+
+
+
