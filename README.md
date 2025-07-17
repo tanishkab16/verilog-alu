@@ -49,18 +49,12 @@ This project implements a 32-bit **synchronous ALU** (Arithmetic Logic Unit) in 
 
 Run the following to simulate with Icarus Verilog:
 
-```bash
+``bash
 iverilog -g2012 -o alu_tb ALU.v ALU_tb.sv
 vvp alu_tb
 gtkwave alu.vcd
-Ensure your testbench includes:
 
-verilog
-Copy
-Edit
-$dumpfile("alu.vcd");
-$dumpvars(0, ALU_tb);
-⚙️ Synthesis using Yosys
+## ⚙️ Synthesis using Yosys
 Commands used for RTL to Gate-level synthesis:
 
 tcl
@@ -74,7 +68,9 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 stat -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog alu_synth.v
 show -format dot -prefix alu_netlist
-🖥️ Netlist Visualization
+
+
+## 🖥️ Netlist Visualization
 Steps:
 
 Generate .dot using Yosys show command.
@@ -86,18 +82,21 @@ Copy
 Edit
 dot -Tpng alu_netlist.dot -o alu_netlist.png
 <img width="798" alt="Netlist Graph" src="https://github.com/user-attachments/assets/aa958023-949e-43a6-898a-d963141b6463" />
-📊 Waveform (GTKWave)
+
+## 📊 Waveform (GTKWave)
 Visual output from GTKWave showing result and flags:
 
 <img width="1076" alt="GTKWave" src="https://github.com/user-attachments/assets/f97e0ea6-e20f-4c38-ba72-f5006b2d5e9b" />
-📐 Area Estimation
+
+
+## 📐 Area Estimation
 Technology: Sky130 Standard Cell Library
 
 Total Cells: ≈ 258
 
 Estimated Area: 1669.10 µm²
 
-🧠 Testbench and Verification
+## 🧠 Testbench and Verification
 Inputs tested:
 
 Random combinations of A, B, and function codes
@@ -118,7 +117,7 @@ Assertion-based verification
 
 Automated input generation
 
-📎 References
+## 📎 References
 Yosys Open Synthesis Suite
 
 GTKWave Viewer
@@ -127,11 +126,8 @@ Graphviz Visualizer
 
 Sky130 PDK (SkyWater)
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 Tanishka Bhatia
 Electronics and Communication Engineering — TIET
-📬 your.email@example.com
+📬 tanishkab1610@gmail.com
 
-markdown
-Copy
-Edit
