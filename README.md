@@ -95,11 +95,12 @@ Edit
 - `GTKWave` for waveform viewing  
 
 ### Commands
-```bash
+``bash
 iverilog -o alu_sim alu.v alu_tb.sv
 vvp alu_sim
 gtkwave alu.vcd
-Testbench Preview:
+
+## Testbench Preview:
 <img width="1326" alt="Testbench Output" src="https://github.com/user-attachments/assets/7a1b4433-9187-4293-84dd-8933e19e99ce" />
 
 ⚙️ Synthesis using Yosys
@@ -115,6 +116,7 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 stat -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog alu_synth.v
 show -format dot -prefix alu_netlist
+
 GTKWave Waveform:
 <img width="1076" alt="GTKWave" src="https://github.com/user-attachments/assets/f97e0ea6-e20f-4c38-ba72-f5006b2d5e9b" />
 
