@@ -27,6 +27,14 @@ This project implements a 32-bit **synchronous ALU** (Arithmetic Logic Unit) in 
 - Edge case handling for signed/unsigned operations
 - RTL and Gate-level simulation
 - Synthesis using Sky130 PDK standard cells
+  
+### ✅ Status Flags
+- **Zero**: Result is zero  
+- **Carry**: Carry-out or borrow  
+- **Negative**: MSB of result  
+- **Overflow**: Signed overflow detection  
+
+<img width="1262" alt="Design Overview" src="https://github.com/user-attachments/assets/6e4a6641-1421-4359-8de1-e65897d01ed9" />
 
 ---
 
@@ -53,6 +61,9 @@ Run the following to simulate with Icarus Verilog:
 - iverilog -g2012 -o alu_tb ALU.v ALU_tb.sv
 - vvp alu_tb
 - gtkwave alu.vcd
+
+## Testbench Preview:
+<img width="1326" alt="Testbench Output" src="https://github.com/user-attachments/assets/7a1b4433-9187-4293-84dd-8933e19e99ce" />
 
 ## ⚙️ Synthesis using Yosys
 Commands used for RTL to Gate-level synthesis:
@@ -81,7 +92,7 @@ Convert to PNG using Graphviz:
 - Copy
 - Edit
 - dot -Tpng alu_netlist.dot -o alu_netlist.png
-- <img width="798" alt="Netlist Graph" src="https://github.com/user-attachments/assets/aa958023-949e-43a6-898a-d963141b6463" />
+<img width="798" alt="Netlist Graph" src="https://github.com/user-attachments/assets/aa958023-949e-43a6-898a-d963141b6463" />
 
 ## 📊 Waveform (GTKWave)
 Visual output from GTKWave showing result and flags:
