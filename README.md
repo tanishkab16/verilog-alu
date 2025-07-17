@@ -50,24 +50,24 @@ This project implements a 32-bit **synchronous ALU** (Arithmetic Logic Unit) in 
 Run the following to simulate with Icarus Verilog:
 
 ``bash
-iverilog -g2012 -o alu_tb ALU.v ALU_tb.sv
-vvp alu_tb
-gtkwave alu.vcd
+- iverilog -g2012 -o alu_tb ALU.v ALU_tb.sv
+- vvp alu_tb
+- gtkwave alu.vcd
 
 ## ⚙️ Synthesis using Yosys
 Commands used for RTL to Gate-level synthesis:
 
-tcl
-Copy
-Edit
-read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog alu.v
-synth -top ALU
-dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-stat -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-write_verilog alu_synth.v
-show -format dot -prefix alu_netlist
+- tcl
+- Copy
+- Edit
+- read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+- read_verilog alu.v
+- synth -top ALU
+- dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+- abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+- stat -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+- write_verilog alu_synth.v
+- show -format dot -prefix alu_netlist
 
 
 ## 🖥️ Netlist Visualization
@@ -77,11 +77,11 @@ Generate .dot using Yosys show command.
 
 Convert to PNG using Graphviz:
 
-bash
-Copy
-Edit
-dot -Tpng alu_netlist.dot -o alu_netlist.png
-<img width="798" alt="Netlist Graph" src="https://github.com/user-attachments/assets/aa958023-949e-43a6-898a-d963141b6463" />
+- bash
+- Copy
+- Edit
+- dot -Tpng alu_netlist.dot -o alu_netlist.png
+- <img width="798" alt="Netlist Graph" src="https://github.com/user-attachments/assets/aa958023-949e-43a6-898a-d963141b6463" />
 
 ## 📊 Waveform (GTKWave)
 Visual output from GTKWave showing result and flags:
@@ -98,36 +98,26 @@ Estimated Area: 1669.10 µm²
 
 ## 🧠 Testbench and Verification
 Inputs tested:
-
-Random combinations of A, B, and function codes
-
-Signed and unsigned boundary cases
+- Random combinations of A, B, and function codes
+- Signed and unsigned boundary cases
 
 Covered cases:
-
-Signed overflow
-
-Carry-out detection
-
-SLT with negative operands
+- Signed overflow
+- Carry-out detection
+- SLT with negative operands
 
 Planned improvements:
-
-Assertion-based verification
-
-Automated input generation
+- Assertion-based verification
+- Automated input generation
 
 ## 📎 References
-Yosys Open Synthesis Suite
-
-GTKWave Viewer
-
-Graphviz Visualizer
-
-Sky130 PDK (SkyWater)
+- Yosys Open Synthesis Suite
+- GTKWave Viewer
+- Graphviz Visualizer
+- Sky130 PDK (SkyWater)
 
 ## 🧑‍💻 Author
-Tanishka Bhatia
-Electronics and Communication Engineering — TIET
-📬 tanishkab1610@gmail.com
+- Tanishka Bhatia
+- Electronics and Communication Engineering — TIET
+- 📬 tanishkab1610@gmail.com
 
